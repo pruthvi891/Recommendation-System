@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Most Rated Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #1a237e;
+            text-align: center;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 80%;
+            margin: auto;
+        }
+
+        .card {
+            width: 48%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #1a237e;
+        }
+
+        .card .details {
+            display: none;
+        }
+
+        .card a {
+            color: #1a237e;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="#" />
+
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/bootstrap.min.css')}} " />
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/pogo-slider.min.css')}} " />
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/style.css')}} " />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/responsive.css')}} " />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/custom.css')}} " />
+
+</head>
+
+<body id="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+
+    <!-- Start header -->
+    <header class="top-header">
+        <nav class="navbar header-nav navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img src="{{url_for('.static', filename='images/logo.png')}}  " alt="image"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link active" href="/">Home</a></li>
+                        <li><a class="nav-link" href="/about">About</a></li>
+                        <li><a class="nav-link" href="/hello">Course</a></li>
+                        <li><a class="nav-link" href="/most_rated_courses">Trending Courses</a></li>
+                        <li><a class="nav-link" href="/co">Trending Career</a></li>
+                        <li><a class="nav-link" href="/contact">Contact</a></li>
+                        <li><a class="nav-link" href="/logout">Logout</a></li> 
+					<li class="mean-last"> <a href="/profile"><img src="{{url_for('.static', filename='images/top-icon.png')}} " alt="#" style="background-color: black;"/></a> </li> 
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End header -->
+
+	<!-- section -->
+	
+	<section class="inner_banner">
+	  <div class="container">
+	      <div class="row">
+		      <div class="col-12">
+			     <div class="full">
+				     <h3>Top Trending Courses</h3>
+				 </div>
+			  </div>
+		  </div>
+	  </div>
+	</section>
+	
+	<!-- end section --> <br>
+    <div class="cards-container">
+        {% for course in most_rated_courses %}
+        <div class="card">
+            <h3>{{ course['Course Name'] }}</h3>
+            <!-- <p><strong>Course Rating:</strong> {{ course['Course Rating'] }}</p> -->
+            <p><strong>Difficulty Level:</strong> {{ course['Difficulty Level'] }}</p>
+            <a href="#" class="read-more-link" onclick="toggleDetails(this)">Read More</a>
+            <div class="details">
+                <p><strong>Skills:</strong> {{ course['Skills'] }}</p>
+                <p><strong>Course Description:</strong> {{ course['Course Description'] }}</p>
+                <a href="{{ course['Course URL'] }}" target="_blank">Learn More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        function toggleDetails(link) {
+            const details = link.nextElementSibling;
+            details.style.display = details.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trending Career Options Roadmap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #1a237e;
+            text-align: center;
+        }
+
+        .career-option {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .career-option h2 {
+            margin-top: 0;
+            color: #1a237e;
+        }
+
+        .career-option p {
+            margin: 10px 0;
+        }
+
+        .roadmap-step {
+            margin-left: 30px;
+        }
+
+        .roadmap-step:before {
+            content: "▶";
+            margin-right: 10px;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="#" />
+
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/bootstrap.min.css')}} " />
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/pogo-slider.min.css')}} " />
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/style.css')}} " />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/responsive.css')}} " />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/custom.css')}} " />
+
+</head>
+
+<body id="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+
+    <!-- Start header -->
+    <header class="top-header">
+        <nav class="navbar header-nav navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img src="{{url_for('.static', filename='images/logo.png')}}  " alt="image"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+					<ul class="navbar-nav">
+                        <li><a class="nav-link active" href="/">Home</a></li>
+                        <li><a class="nav-link" href="/about">About</a></li>
+                        <li><a class="nav-link" href="/hello">Course</a></li>
+                        <li><a class="nav-link" href="/most_rated_courses">Trending Courses</a></li>
+                        <li><a class="nav-link" href="/co">Trending Career</a></li>
+                        <li><a class="nav-link" href="/contact">Contact</a></li>
+                        <li><a class="nav-link" href="/logout">Logout</a></li> 
+					<li class="mean-last"> <a href="/profile"><img src="{{url_for('.static', filename='images/top-icon.png')}} " alt="#" style="background-color: black;"/></a> </li> 
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End header -->
+
+	<!-- section -->
+	
+	<section class="inner_banner">
+	  <div class="container">
+	      <div class="row">
+		      <div class="col-12">
+			     <div class="full">
+				     <h3>Trending Career Options Roadmap</h3>
+				 </div>
+			  </div>
+		  </div>
+	  </div>
+	</section>
+	
+	<!-- end section -->
+
+    <div class="career-option">
+        <h2>Data Science</h2>
+        <p>Data science is a rapidly growing field that deals with extracting insights and knowledge from large and complex data sets.</p>
+        <h3>Roadmap:</h3>
+        <ul>
+            <li class="roadmap-step">Step 1: Learn Python programming language.</li>
+            <li class="roadmap-step">Step 2: Master data manipulation and analysis using pandas and NumPy.</li>
+            <li class="roadmap-step">Step 3: Study statistics and probability for data analysis.</li>
+            <li class="roadmap-step">Step 4: Get familiar with data visualization tools like Matplotlib and Seaborn.</li>
+            <li class="roadmap-step">Step 5: Dive into machine learning algorithms and techniques.</li>
+        </ul>
+    </div>
+
+    <div class="career-option">
+        <h2>Artificial Intelligence (AI)</h2>
+        <p>AI involves creating intelligent machines that can perform tasks requiring human-like intelligence.</p>
+        <h3>Roadmap:</h3>
+        <ul>
+            <li class="roadmap-step">Step 1: Learn Python and mathematics for AI programming.</li>
+            <li class="roadmap-step">Step 2: Understand machine learning algorithms and frameworks.</li>
+            <li class="roadmap-step">Step 3: Explore natural language processing (NLP) and computer vision.</li>
+            <li class="roadmap-step">Step 4: Gain expertise in deep learning and neural networks.</li>
+            <li class="roadmap-step">Step 5: Work on AI projects and develop real-world applications.</li>
+        </ul>
+    </div>
+
+    <div class="career-option">
+        <h2>Cybersecurity</h2>
+        <p>Cybersecurity involves protecting computer systems and networks from security breaches and attacks.</p>
+        <h3>Roadmap:</h3>
+        <ul>
+            <li class="roadmap-step">Step 1: Understand computer networks and operating systems.</li>
+            <li class="roadmap-step">Step 2: Learn about common cybersecurity threats and vulnerabilities.</li>
+            <li class="roadmap-step">Step 3: Get familiar with security tools and techniques.</li>
+            <li class="roadmap-step">Step 4: Study cryptography and secure communication protocols.</li>
+            <li class="roadmap-step">Step 5: Obtain relevant cybersecurity certifications.</li>
+        </ul>
+    </div>
+
+    <div class="career-option">
+        <h2>User Experience (UX) Design</h2>
+        <p>UX design focuses on creating intuitive and user-friendly digital experiences for products and websites.</p>
+        <h3>Roadmap:</h3>
+        <ul>
+            <li class="roadmap-step">Step 1: Understand design principles and typography.</li>
+            <li class="roadmap-step">Step 2: Master design tools like Adobe XD and Sketch.</li>
+            <li class="roadmap-step">Step 3: Conduct user research and usability testing.</li>
+            <li class="roadmap-step">Step 4: Learn about interaction design and prototyping.</li>
+            <li class="roadmap-step">Step 5: Build a strong portfolio of UX design projects.</li>
+        </ul>
+    </div>
+
+    <div class="career-option">
+        <h2>Blockchain Development</h2>
+        <p>Blockchain is a decentralized and secure technology that powers cryptocurrencies and various other applications.</p>
+        <h3>Roadmap:</h3>
+        <ul>
+            <li class="roadmap-step">Step 1: Understand the basics of blockchain technology.</li>
+            <li class="roadmap-step">Step 2: Learn smart contract development using Solidity.</li>
+            <li class="roadmap-step">Step 3: Explore blockchain platforms like Ethereum and Hyperledger.</li>
+            <li class="roadmap-step">Step 4: Develop decentralized applications (DApps).</li>
+            <li class="roadmap-step">Step 5: Stay updated with blockchain advancements and industry trends.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

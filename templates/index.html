@@ -1,76 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Coursera recommender</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="#" />
+
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/bootstrap.min.css')}} " />
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/pogo-slider.min.css')}} " />
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/style.css')}} " />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/responsive.css')}} " />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/custom.css')}} " />
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="#" />
 </head>
 
-<body>
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" class="brand-logo">A project by Saket Gupta</a>
-      <ul class="right hide-on-med-and-down">
-        <li>saketgupta9424@gmail.com</li>
-      </ul>
+<body id="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
 
-      <ul id="nav-mobile" class="sidenav">
-        <li><a>saketgupta9424@gmail.com</a></li>
-      </ul>
-      <a data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+    <!-- Start header -->
+    <header class="top-header">
+        <nav class="navbar header-nav navbar-expand-lg">
+            <div class="container-fluid">
+                <a  href="index.html"><img src="{{url_for('.static', filename='images/logo.png')}}  " alt="image"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link active" href="/">Home</a></li>
+                        <li><a class="nav-link" href="/about">About</a></li>
+                        <li><a class="nav-link" href="/hello">Course</a></li>
+                        <li><a class="nav-link" href="/most_rated_courses">Trending Courses</a></li>
+                        <li><a class="nav-link" href="/co">Trending Career</a></li>
+                        <li><a class="nav-link" href="/contact">Contact</a></li>
+                        <li><a class="nav-link" href="/logout">Logout</a></li> 
+					<li class="mean-last"> <a href="/profile"><img src="{{url_for('.static', filename='images/top-icon.png')}} " alt="#" style="background-color: black;"/></a> </li> 
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End header -->
 
-
-  <div class="section no-pad-bot" id="index-banner">
+	<!-- section -->
+	
+	<section class="inner_banner">
+	  <div class="container">
+	      <div class="row">
+		      <div class="col-12">
+			     <div class="full">
+				     <h3>Coursera Courses recommender</h3>
+				 </div>
+			  </div>
+		  </div>
+	  </div>
+	</section>
+	
+	<!-- end section -->
+  <!-- End header -->
+  <div class="section no-pad-bot" id="index-banner" >
     <div class="container">
       <br><br>
-      <h1 class="header center orange-text">Courses recommender</h1>
-      <div class="row center">
+      <!-- <h1 class="header center orange-text">Courses recommender</h1> -->
+      <!-- <div class="row center">
         <h5 class="header col s12 light">Coursera Courses recommender
         <br>
         </h5>
-      </div>
+      </div> -->
 
-              <div class="row">
-    <form action='/predict' method="POST" class="col s12">
       <div class="row">
-        <form action='/predict' method="post" class="col s12">
+        <form action='/predict' method="POST" class="col s12">
           <div class="row">
-            <div class="input-field col s4">
-                <label for="first_name"><b>Search Courses</b></label>
-                <br>
-              <input placeholder="Type course name to get recommendations" name="course" id="first_name" type="text" class="validate">
+            <form action='/predict' method="post" class="col s12">
+              <div class="row">
+                <div class="input-field col s4">
+                    <label for="first_name"><b>Search Courses</b></label>
+                    <br>
+                    <input placeholder="Type course name to get recommendations" name="course" id="first_name" type="text" class="validate">
+                    <button type="submit" class="btn-large waves-effect waves-light orange">Search Courses</button>
+                </div>
+              </div>
+        </form>
+      </div>
+          <!-- Other HTML content goes here -->
+
+<!-- Other HTML content goes here -->
+
+<h4><b>{{ message }}</b></h4>
+{% if pred %}
+  <div class="row">
+    {% for course in pred %}
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">{{ course['Course Name'] }}</span>
+            <hr>
+            <p>Difficulty Level: {{ course['Difficulty Level'] }}</p>
+            <hr>
+            <p>Course Rating: {{ course['Course Rating'] | star_rating }}</p>
+            <hr>
+            <p>Course URL: {{ course['Course URL'] }}</p>
+            <!-- Add a button to toggle the visibility of the description and skills -->
+            <button class="btn" onclick="toggleDescription('{{ course['Course Name'] }}')">Read More</button>
+            <div id="{{ course['Course Name'] }}Description" style="display: none;">
+              <hr>
+              <p>Skills: {{ course['Skills'] }}</p>
+              <hr>
+              <p>Course Description: {{ course['Course Description'] }}</p>
             </div>
+          </div>
+          <div class="card-action">
+            <a href="{{ course['Course URL'] }}" target="_blank">Learn More</a>
+          </div>
+        </div>
       </div>
+    {% endfor %}
+  </div>
+<!-- {% else %}
+  <p>No course recommendations found.</p> -->
+{% endif %}
 
-      <div class="row center">
-
-          <button type="submit" class="btn-large waves-effect waves-light orange">Search Courses</button>
-      </div>
-    </form>
-      </div>
-
-      <br><h4><b>{{message}}</b></h4>
-        <br>
-      <br>{{pred}}
-        <br>
 
     </div>
   </div>
 
-  <!--  -->
-
-  <footer class="page-footer orange">
+<!-- 
+  <footer class="page-footer #fff" style="width: 100%;">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">About Me</h5>
-          <p class="grey-text text-lighten-4">I am a passionate and self motivated student of NIT Jamshedpur who aspires to become a Data scientist. This is a recommendation engine project that suggest top 10 courses according to your search criteria. Please visit my Github to see the whole code with jupyter notebook. </p>
+          <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum vitae quas quae, laudantium est amet quia necessitatibus animi iure impedit, saepe harum dolores nam a sed aliquam, suscipit in error!</p>
 
 
         </div>
@@ -78,22 +158,31 @@
         <div class="col l3 s12">
           <h5 class="white-text">Connect</h5>
           <ul>
-            <li><a class="white-text" href="https://github.com/Saket046">Github</a></li>
-            <li><a class="white-text" href="https://www.linkedin.com/in/saket-gupta-6a91651b2/">LinkedIn</a></li>
-            <li><a class="white-text" href="https://www.kaggle.com/saket046">Kaggle</a></li>
-            <li><a class="white-text">Mail me at: saketgupta9424@gmail.com</a></li>
+            <li><img src="{{url_for('.static', filename='images/i5.png')}} "><span>London 145<br>United Kingdom</span></li>
+            <li><img src=" {{url_for('.static', filename='images/i6.png')}} "><span>demo@gmail.com</span></li>
+            <li><img src="{{url_for('.static', filename='images/i7.png')}}"><span>+12586954775</span></li>
+         
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="instagram.com/saket046">Saket Gupta</a>
-      </div>
+
     </div>
-  </footer>
+  </footer> -->
 
 
+  <script>
+    function toggleDescription(courseName) {
+      var descriptionDiv = document.getElementById(courseName + 'Description');
+      if (descriptionDiv.style.display === 'none') {
+        descriptionDiv.style.display = 'block';
+      } else {
+        descriptionDiv.style.display = 'none';
+      }
+    }
+  </script>
+  
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src=".js/materialize.js"></script>
@@ -101,4 +190,3 @@
 
   </body>
 </html>
-

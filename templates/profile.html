@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #007BFF; /* Change heading color to blue */
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .btn-primary {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="#" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/bootstrap.min.css')}} " />
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/pogo-slider.min.css')}} " />
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/style.css')}} " />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/responsive.css')}} " />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/custom.css')}} " />
+
+</head>
+<body>
+    <!-- Start header -->
+    <header class="top-header">
+      <nav class="navbar header-nav navbar-expand-lg">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="index.html"><img src="{{url_for('.static', filename='images/logo.png')}}  " alt="image"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                <ul class="navbar-nav">
+                    <li><a class="nav-link active" href="/">Home</a></li>
+                    <li><a class="nav-link" href="/about">About</a></li>
+                    <li><a class="nav-link" href="/hello">Course</a></li>
+                    <li><a class="nav-link" href="/most_rated_courses">Trending Courses</a></li>
+                    <li><a class="nav-link" href="/co">Trending Career</a></li>
+                    <li><a class="nav-link" href="/contact">Contact</a></li>
+                    <li><a class="nav-link" href="/logout">Logout</a></li> 
+                <!-- <li class="mean-last"> <a href="/profile"><img src="{{url_for('.static', filename='images/top-icon.png')}} " alt="#" style="background-color: black;"/></a> </li>  -->
+                </ul>
+              </div>
+          </div>
+      </nav>
+  </header>
+  <!-- End header -->
+     <center><br><br><br><br><br>
+    <h1 style="margin-top:5%">Welcome, {{ user.username }}!</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>Phone Number: {{ user.phone_number }}</p>
+    <a href="{{ url_for('update_profile') }}" class="btn btn-primary">Update Profile</a></center>
+</body>
+</html>

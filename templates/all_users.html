@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Users and Contact Messages</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: aquamarine;
+            font-family: Arial, sans-serif;
+        }
+
+        .top-header {
+            background-color: #f8f9fa;
+        }
+
+        .navbar-brand img {
+            max-height: 40px;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #343a40;
+        }
+
+        .nav-link {
+            color: #343a40;
+            font-weight: bold;
+        }
+
+        .nav-link.active {
+            color: #007bff;
+        }
+
+        .table-bordered {
+            border: 2px solid #dee2e6;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+
+        .table-bordered th,
+        .table-bordered td {
+            border: 2px solid #dee2e6;
+            padding: 10px;
+        }
+
+        h1 {
+            margin-top: 10%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Start header -->
+    <header class="top-header">
+        <nav class="navbar header-nav navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img src="path/to/your/logo.png" alt="image"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav">
+                        <!-- Add your navigation links here -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End header -->
+
+    <div class="container">
+        <center>
+            <h1>All Users</h1>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.phone_number }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <h1>All Contact Messages</h1>
+            <ul class="list-group">
+                {% for message in contact_messages %}
+                <li class="list-group-item">
+                    <strong>Name:</strong> {{ message.name }}<br>
+                    <strong>Email:</strong> {{ message.email }}<br>
+                    <strong>Phone Number:</strong> {{ message.phone_number }}<br>
+                    <strong>Message:</strong> {{ message.message }}
+                </li>
+                {% endfor %}
+            </ul>
+        </center>
+    </div>
+
+    <!-- Bootstrap JS (optional, if you want to use Bootstrap's JavaScript components) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
